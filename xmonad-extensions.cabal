@@ -55,7 +55,7 @@ library
     -- other-extensions:
 
     -- Other library packages from which modules are imported.
-    build-depends:    base ^>=4.14.1.0, containers ^>=0.6.2.1, data-default ^>= 0.7.1.1, X11 (>=1.6.1 && <1.11), xmonad ^>= 0.15 || ^>= 0.17, xmonad-contrib ^>= 0.16 || ^>= 0.17
+    build-depends:    base ^>=4.14 || ^>=4.15 || ^>=4.16, containers ^>=0.6.2.1, data-default ^>= 0.7.1.1, X11 (>=1.6.1 && <1.11), xmonad ^>= 0.15 || ^>= 0.17, xmonad-contrib ^>= 0.16 || ^>= 0.17
 
     -- Directories containing source files.
     hs-source-dirs:   src
@@ -77,4 +77,4 @@ test-suite xmonad-extensions-test
     main-is:          MyLibTest.hs
 
     -- Test dependencies.
-    build-depends:    base ^>=4.14.1.0
+    build-depends:    base ^>=4.14 || ^>=4.15 || ^>=4.16
