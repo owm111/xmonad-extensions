@@ -30,6 +30,7 @@ import XMonad
 import XMonad.Actions.OnScreen
 import XMonad.Actions.PhysicalScreens
 import XMonad.StackSet qualified as W
+import XMonad.Util.Keymap
 
 {-|
 View the given workspace set. Workspace set /n/ is defined as workspace 0
@@ -52,21 +53,16 @@ viewWorkspaceSet' n = do
 goPair (screen, wksp) = lift (windows (greedyViewOnScreen screen wksp))
 
 {-|
-Generate a keybind map of 'viewWorkspaceSet' for all workspaces with
-the same mask and a given set of symbols. The result can be combined
-with other maps monoidally, i.e., via '<>'.
+Generate a 'Keymap' of 'viewWorkspaceSet' for all workspaces with
+the same mask and a given set of symbols.
 -}
 workspaceSetKeys ::
-    {-| The mask to use for all the binds of this map. The argument is
-    the 'XConfig'\'s 'modMask'. For just the 'modMask', use @id@. For
-    'modMask' with another mask, use @(.|. mask)@. For something that
-    does involve the 'modMask', use @(const mask)@. -}
-    (KeyMask -> KeyMask) ->
+    {-| The mask to use for all the binds of this map. -}
+    KeyMaskFn ->
     {-| List of key symbols to use for mappings. To use the number keys,
     use @[xK_1 ..]@. -}
     [KeySym] ->
-    {-| Resulting map of keybinds. -}
-    (XConfig Layout -> M.Map (KeyMask, KeySym) (X ()))
+    Keymap
 workspaceSetKeys maskf keys XConfig {modMask, workspaces} = M.fromList $ do
     (i, key) <- zip [0 .. (length workspaces - 1) `div` 3] keys
     pure ((maskf modMask, key), viewWorkspaceSet i)
