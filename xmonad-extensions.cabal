@@ -46,7 +46,7 @@ extra-source-files: CHANGELOG.md
 
 library
     -- Modules exported by the library.
-    exposed-modules:  XMonad.Actions.CycleSettings, XMonad.Hooks.DisableShadows, XMonad.Hooks.DynamicLog.Extras, XMonad.Layout.Spacing.Extras, XMonad.Layout.Toggle3Layouts, XMonad.Util.Loggers.ScreenWorkspaces, XMonad.Actions.OnePlusThree, XMonad.Util.Keymap
+    exposed-modules:  XMonad.Actions.CycleSettings, XMonad.Hooks.DisableShadows, XMonad.Hooks.DynamicLog.Extras, XMonad.Layout.Spacing.Extras, XMonad.Layout.Toggle3Layouts, XMonad.Util.Loggers.ScreenWorkspaces, XMonad.Actions.OnePlusThree, XMonad.Util.Keymap, XMonad.Actions.CompileRestart
 
     -- Modules included in this library but not exported.
     -- other-modules:
@@ -55,7 +55,7 @@ library
     -- other-extensions:
 
     -- Other library packages from which modules are imported.
-    build-depends:    base ^>=4.14 || ^>=4.15 || ^>=4.16, containers ^>=0.6.2.1, data-default ^>= 0.7.1.1, X11 (>=1.6.1 && <1.11), xmonad ^>= 0.17, xmonad-contrib ^>= 0.17, transformers ^>= 0.5
+    build-depends:    base ^>=4.14 || ^>=4.15 || ^>=4.16, containers ^>=0.6.2.1, data-default ^>= 0.7.1.1, X11 (>=1.6.1 && <1.11), xmonad ^>= 0.17, xmonad-contrib ^>= 0.17, transformers ^>= 0.5, unix ^>= 2.7, filepath ^>= 1.4
 
     -- Directories containing source files.
     hs-source-dirs:   src
