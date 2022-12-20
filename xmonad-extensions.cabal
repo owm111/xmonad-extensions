@@ -55,7 +55,7 @@ library
     -- other-extensions:
 
     -- Other library packages from which modules are imported.
-    build-depends:    base ^>=4.14 || ^>=4.15 || ^>=4.16, containers ^>=0.6.2.1, data-default ^>= 0.7.1.1, X11 (>=1.6.1 && <1.11), xmonad ^>= 0.15 || ^>= 0.17, xmonad-contrib ^>= 0.16 || ^>= 0.17, transformers ^>= 0.5
+    build-depends:    base ^>=4.14 || ^>=4.15 || ^>=4.16, containers ^>=0.6.2.1, data-default ^>= 0.7.1.1, X11 (>=1.6.1 && <1.11), xmonad ^>= 0.17, xmonad-contrib ^>= 0.17, transformers ^>= 0.5
 
     -- Directories containing source files.
     hs-source-dirs:   src
