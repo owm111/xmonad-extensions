@@ -45,7 +45,8 @@ screenWorkspacesPP names merge pp@PP {..} = pp
     { ppCurrent = const ""
     , ppVisible = const ""
     , ppExtras = screenWorkspacesLogger names current visible ppWsSep : ppExtras
-    , ppOrder = ppOrder . \(w : l : t : f : rest) -> (f ++ w) : l : t : rest
+    , ppOrder = ppOrder . \(w : l : t : f : rest) ->
+        concat [f, ppWsSep, w] : l : t : rest
     } where
         current s w = ppCurrent (merge s w)
         visible s w = ppVisible (merge s w)
